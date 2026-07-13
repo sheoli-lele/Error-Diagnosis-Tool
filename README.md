@@ -21,7 +21,7 @@ Let's say a student was given the following word problem, which they answered in
 
 " I build 15 widgets in 2 hours and my dad builds 30 in 3 -- how many can we build together in 1 hour?"
 
-From start to finish, the tool goes through these stages: Input -> -? Solution Plan -> Error Signatures and Ground Truth -> Claude clasisifcatuon -> Diagnosis + Follow-ups
+From start to finish, the tool goes through these stages: Input ->  Solution Plan -> Error Signatures and Ground Truth -> Claude clasisifcatuon -> Diagnosis + Follow-ups
 
 The input into the tool has three parts:
 
@@ -31,7 +31,12 @@ The input into the tool has three parts:
 
 My error taxonomy includes these four steps, explained using our earlier example:
 
-
+| Stage | What breaks | Widget-problem example |
+|-------|-------------|------------------------|
+| Comprehension | Misunderstands what's being asked | Computes only one person's rate |
+| Transformation | Wrong operations or setup | Divides 2 by 15 instead of 15 by 2 |
+| Process | Execution errors (arithmetic, order of operations) | 15 ÷ 2 = 7 |
+| Encoding | Right math, wrong final answer | Reports 10 — dad's rate, an intermediate |
 
 The deterministic layer of the tool establishes the ground truth. The problem is stored not just as a text-answer pair, but as a solution plan: an ordered list of steps where each is an operation on operands that can reference earlier results. 
 
